@@ -4,11 +4,13 @@
     --primario: #ffc107;
     --secundario: #0097a7;
     --gris: #757575;
+    --grisClaro: #DFE9F3;
 }
 
 html {
     font-size: 62.5%;
     box-sizing: border-box; /*Hacks para el manejo de box model*/
+    background-image: linear-gradient(to top, var(--grisClaro) 0%, var(--blanco) 100%);
 }
 
 /*Hacks para el manejo de box model*/
@@ -20,6 +22,16 @@ html {
 body {
     font-size: 16px;
     font-family: 'Krub', sans-serif;
+}
+
+.sombra {
+    /*Sombra del elemento en el borde*/
+    box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(112,112,112,0.48);
+    background-color: var(--blanco);
+    padding: 2rem; /*Espacio interior*/
+    border-radius: 1rem; /*Esquinas redondeadas*/
 }
 
 /*Tipografías*/
@@ -71,12 +83,6 @@ h1, h2, h3 {
     color: var(--oscuro);
 }
 
-@media (min-width: 768px) {
-    .navegacion-principal{
-        flex-direction: row;
-    }
- }
-
  /*Hero*/
 
 .hero {
@@ -85,6 +91,7 @@ h1, h2, h3 {
     background-size: cover; /*para que cubra todo el tamaño de la pantalla*/
     height: 450px;
     position: relative; /*El padre debe ser el relativo*/
+    margin-bottom: 2rem; /*Margen inferior para separar el contenido*/ 
 }
 
 .contenido-hero {
@@ -119,8 +126,52 @@ h1, h2, h3 {
     font-size: 2rem;  /*Tamaño de la letra*/
     text-transform: uppercase; /*Poner el mayúsculas*/
     text-align: center;
-    width: 90%; 
+    width: 90%;
 }
+
+/*Servicios*/
+@media (min-width: 768px) {
+    .servicios {
+        display: grid;
+        /*grid-template-columns: 33.33% 33.3% 33.3%;*/
+        /*grid-template-columns: 1fr 1fr 1fr;*/
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem; /*Distancia entre columna*/
+    }
+ }
+
+ .servicio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+ }
+
+ .servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+ }
+
+.servicio p {
+    line-height: 2; /*Interlineado*/
+    text-align: center;
+}
+
+.servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+    }
+ }
 
 @media (min-width: 768px) {
     .boton{
