@@ -225,7 +225,7 @@ propiedad no existe en el enlace "a" , simplemente lo ignora */
     display: block; /* Logra que cada label tome todo el espacio disponible y estar 
 separado del input */
 }
-.formulario input, 
+.formulario .input-text, 
 .formulario textarea{
     width: 100%;
     border: none;
@@ -233,7 +233,7 @@ separado del input */
     border-radius: .5rem;
 }
 .campo textarea {
- height: 20rem; /* Hacer más grande la altura del textarea*/
+    height: 20rem; /* Hacer más grande la altura del textarea*/
 }
 
 .boton:hover{
